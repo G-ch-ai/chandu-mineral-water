@@ -1,0 +1,32 @@
+/* src/components/Products.css */
+
+.products-section {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* --- Responsive adjustment for small screens --- */
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* Stack cards on very small screens */
+    padding: 0 10px;
+  }
+}

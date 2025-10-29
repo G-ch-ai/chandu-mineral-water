@@ -1,0 +1,83 @@
+/* src/components/Footer.css */
+
+.footer-container {
+  background-color: var(--color-secondary); /* Darker blue background */
+  color: var(--color-light); /* White text */
+  padding-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows sections to stack on smaller screens */
+  gap: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 30px;
+}
+
+.footer-section {
+  flex: 1; /* Distribute space evenly */
+  min-width: 250px; /* Minimum width before wrapping */
+}
+
+.footer-section h3 {
+  color: var(--color-light);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.footer-phone-link {
+  color: var(--color-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li a {
+  color: var(--color-light);
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: var(--color-primary); /* Use the primary blue as a hover color */
+}
+
+.social-icons a {
+  color: var(--color-light);
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 0.85rem;
+  background-color: #004d99; /* Even darker blue for the bottom bar */
+}
+
+/* --- Responsive adjustment --- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-section {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}

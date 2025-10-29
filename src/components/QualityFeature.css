@@ -1,0 +1,31 @@
+/* src/components/QualityFeature.css */
+
+.quality-feature {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.quality-feature:hover {
+    transform: translateY(-3px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--color-primary); /* Primary blue for water-related icons */
+  margin-bottom: 15px;
+}
+
+.quality-feature h3 {
+  font-size: 1.3rem;
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+}
+
+.quality-feature p {
+  font-size: 0.95rem;
+  color: #555;
+}

@@ -1,0 +1,21 @@
+/* src/components/Quality.css */
+
+.quality-section {
+    background-color: #f0faff; /* Very light blue background to set it apart */
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.quality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}

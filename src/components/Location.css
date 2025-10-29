@@ -1,0 +1,18 @@
+/* src/components/Location.css */
+
+.location-section {
+    text-align: center;
+    background-color: var(--color-background); /* Use the light grey background */
+}
+
+.map-container {
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the iframe corners are rounded */
+}
+
+.map-container iframe {
+    /* Ensures the iframe takes up all container space */
+    display: block; 
+}

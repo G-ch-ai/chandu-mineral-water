@@ -1,0 +1,167 @@
+/* src/components/Header.css */
+
+.header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  /* UPDATED: Increased Header Height for Logo */
+  height: 80px; 
+  
+  background-color: var(--color-light); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000; 
+}
+
+/* Style for the logo container/link */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+}
+
+/* Style for the logo image */
+.logo-img {
+    height: 50px; 
+    margin-right: 10px; 
+}
+
+.logo h1 {
+  /* Adjusted font size and spacing for logo */
+  font-size: 1.8rem; 
+  color: var(--color-primary);
+  margin: 0;
+  white-space: nowrap; 
+}
+
+.nav-links {
+    /* Desktop default: horizontal */
+    display: flex;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary); 
+}
+
+/* -------------------------------------------------- */
+/* MOBILE MENU STYLES (Hamburger) */
+/* -------------------------------------------------- */
+
+.menu-toggle {
+    display: none; /* Crucial: HIDDEN on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2000;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--color-text);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    transform-origin: 1px;
+}
+
+/* -------------------------------------------------- */
+/* MEDIA QUERY: WHEN THE SCREEN IS SMALL (Mobile View) */
+/* -------------------------------------------------- */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+        /* Adjusted mobile height */
+        height: 70px; 
+        
+        /* New: Change header to position: relative to contain absolutely positioned toggle */
+        position: relative; 
+    }
+    
+    /* Smaller logo height on mobile */
+    .logo-img {
+        height: 40px; 
+    }
+    
+    /* FIX: Remove mobile specific logo margins */
+    .logo {
+        margin-right: 0; 
+        padding-right: 0;
+    }
+    
+    /* CRUCIAL FIX: Absolute positioning to stick it to the right */
+    .menu-toggle {
+        display: flex !important;
+        position: absolute;
+        right: 20px; /* Aligns with the header padding */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust for vertical centering */
+    }
+
+    .nav-links {
+        /* Default state: Hide menu off-screen */
+        flex-direction: column;
+        
+        /* Position must be absolute/fixed relative to the body/viewport */
+        position: fixed; 
+        
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        height: 0; 
+        overflow: hidden; 
+        background-color: var(--color-light); 
+        transition: height 0.3s ease-in-out, box-shadow 0.3s;
+        box-shadow: none; 
+        padding: 0;
+    }
+
+    .nav-links.mobile-open {
+        height: 250px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    .nav-links a {
+        display: block; 
+        padding: 12px 20px; 
+        margin-left: 0;
+        border-bottom: 1px solid #f0f0f0; 
+        text-align: left;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    /* Optional: Hamburger Animation (X-mark) */
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
