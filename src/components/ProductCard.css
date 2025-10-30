@@ -1,8 +1,8 @@
 /* src/components/ProductCard.css */
 
 .product-card {
-  background-color: var(--color-light); /* White background for the card */
-  border-radius: 10px;
+  background-color: var(--color-light); 
+  border-radius: 10px; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -11,13 +11,13 @@
 }
 
 .product-card:hover {
-  transform: translateY(-5px); /* Subtle lift effect on hover */
+  transform: translateY(-5px); 
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .product-image-placeholder {
-  height: 200px; /* Standard height for the image area */
-  background-color: #e6f7ff; /* Very light blue background */
+  height: 200px; 
+  background-color: #e6f7ff; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,11 +29,14 @@
 .product-details {
   padding: 20px;
   text-align: center;
-  min-height: 350px; 
+  
+  /* CRUCIAL FIX 1: Increased minimum height to accommodate ALL content */
+  min-height: 380px; 
   
   display: flex;             
   flex-direction: column;    
-  justify-content: space-between;
+  /* CRUCIAL FIX 2: Pushes the last item (button) to the very bottom */
+  justify-content: space-between; 
 }
 
 .product-details h3 {
@@ -59,24 +62,17 @@
   list-style: none;
   padding: 0;
   text-align: left;
-  /* Ensure a bottom margin is present to separate list from button */
   margin-bottom: 20px; 
   
-  /* ADDED: Allow the feature list to take up available space */
+  /* CRUCIAL FIX 3: Tells the list to consume all remaining space */
   flex-grow: 1; 
-}
-
-.product-features li {
-  font-size: 0.9rem;
-  margin-bottom: 5px;
-  color: #444;
 }
 
 .card-cta-button {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: var(--color-primary); /* Use primary blue */
+  background-color: var(--color-primary); 
   color: var(--color-light);
   text-decoration: none;
   border-radius: 5px;
@@ -85,5 +81,5 @@
 }
 
 .card-cta-button:hover {
-  background-color: var(--color-secondary); /* Darker blue on hover */
+  background-color: var(--color-secondary); 
 }

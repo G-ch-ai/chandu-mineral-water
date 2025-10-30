@@ -2,7 +2,7 @@
 .hero-section {
   /* Placeholder for a large, high-quality image background */
   background-image: linear-gradient(rgba(0, 123, 255, 0.4), rgba(0, 123, 255, 0.4)), 
-                    url('https://via.placeholder.com/1600x700?text=Placeholder+Image+of+Pure+Water+Plant+or+Bottles');
+                    url('../assets/Herobg2.jpg');
   background-size: cover;
   background-position: center;
   color: white; /* White text on the image overlay */
@@ -11,7 +11,10 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 60px; /* To account for the fixed header */
+  padding-top: 60px;
+  margin-bottom: 20px;
+  border-radius: 2px 2px 2px 2px;
+  overflow: hidden;
 }
 
 .hero-content {

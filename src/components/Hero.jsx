@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section id="home" className="hero-section">
       <div className="hero-content">
-        <h1>Pure & Refreshing Drinking Water</h1>
+        <h1>Chandu Mineral Water: Your Source of Purest Water</h1>
         <h2>Trusted by families in Bangarupalem for guaranteed quality.</h2>
         <a href="#contact" className="cta-button">
           Order Delivery Now!

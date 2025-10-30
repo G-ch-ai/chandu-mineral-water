@@ -1,0 +1,101 @@
+/* src/components/ValueProps.css */
+
+.value-props-container {
+    display: flex;
+    justify-content: space-around;
+    
+    /* Adjusted padding for more consistent internal spacing */
+    padding: 30px 40px; 
+    
+    /* Margin below to create gap with the next section (Products) */
+    margin-bottom: 40px; 
+    
+    background-color: var(--color-light); 
+    border-bottom: 5px solid #e6f7ff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    max-width: 1400px; 
+    margin-left: auto; 
+    margin-right: auto;
+    
+    /* Added subtle border-radius for consistency, if other elements are rounded */
+    border-radius: 5px; 
+}
+
+.value-prop {
+    text-align: center;
+    max-width: 280px;
+    padding: 15px 10px; 
+}
+
+.value-prop span {
+    font-size: 2.8rem; /* Slightly larger icon for more impact */
+    display: block;
+    margin-bottom: 12px;
+    color: var(--color-primary);
+}
+
+.value-prop h3 {
+    color: var(--color-secondary);
+    font-size: 1.3rem; /* Slightly larger headline */
+    margin-bottom: 8px;
+}
+
+.value-prop p {
+    font-size: 0.95rem; /* Slightly larger paragraph text */
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 768px) {
+    .value-props-container {
+        flex-direction: column;
+        
+        /* Adjusted gap for better spacing between stacked items */
+        gap: 30px; 
+        
+        /* Reduced horizontal padding on very small screens */
+        padding: 25px 20px; 
+        
+        margin-top: 0;
+        margin-bottom: 30px; /* Slightly less margin on mobile */
+    }
+    
+    .value-prop {
+        border-bottom: 1px dashed #e0e0e0;
+        padding-bottom: 25px;
+    }
+    
+    .value-prop:last-child {
+        border-bottom: none;
+        padding-bottom: 0; /* Remove extra padding for the last item */
+    }
+    
+    /* Adjust text sizes for smaller screens for better readability */
+    .value-prop span {
+        font-size: 2.2rem; 
+        margin-bottom: 8px;
+    }
+    
+    .value-prop h3 {
+        font-size: 1.1rem; 
+    }
+    
+    .value-prop p {
+        font-size: 0.9rem; 
+    }
+}
+
+/* --- Tablet/Mid-size screen adjustments --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .value-props-container {
+        padding: 25px 30px; /* Adjust padding for tablets */
+    }
+    .value-prop span {
+        font-size: 2.5rem;
+    }
+    .value-prop h3 {
+        font-size: 1.2rem;
+    }
+}

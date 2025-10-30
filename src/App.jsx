@@ -13,6 +13,8 @@ import Gallery from './components/Gallery';
 import Contact from './components/Contact'; 
 import Location from './components/Location'; 
 import Footer from './components/Footer'; 
+import ValueProps from './components/ValueProps';
+import BackToTopButton from './components/BackToTopButton';
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
       {/* 2. Main Content Area */}
       <main className="main-content">
         <Hero />       {/* Hero/Main Banner */}
+        <ValueProps />
         <Products />   {/* Product Listings */}
         <Quality />    {/* Quality Process */}
         <Gallery />
@@ -32,6 +35,7 @@ function App() {
       
       {/* 3. Footer */}
       <Footer /> 
+      <BackToTopButton />
     </div>
   );
 }

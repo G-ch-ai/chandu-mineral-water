@@ -1,8 +1,8 @@
 // src/components/Header.jsx
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // ADDED useEffect
 import './Header.css';
-import CMWlogo from '../assets/CMWlogo.png'; // Make sure this path is correct
+import LogoImage from '../assets/CMWLogo.png'; 
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,14 +15,34 @@ const Header = () => {
     setIsOpen(false);
   };
 
+  /* ----------------------------------------------------------------- */
+  /* NEW LOGIC: Close menu when the user scrolls */
+  /* ----------------------------------------------------------------- */
+  useEffect(() => {
+    // 1. Define the scroll handler function
+    const handleScroll = () => {
+      // 2. Only close the menu if it is currently open
+      if (isOpen) {
+        closeMenu();
+      }
+    };
+
+    // 3. Attach the event listener when the component mounts or 'isOpen' changes
+    window.addEventListener('scroll', handleScroll);
+
+    // 4. Clean up: Remove the event listener when the component unmounts
+    //    or before re-running the effect (standard practice for performance)
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isOpen]); // Dependency array: Re-run effect only when 'isOpen' state changes
+
+  /* ----------------------------------------------------------------- */
+  
   return (
     <header className="header">
-      {/* WRAPPED in an <a> tag to make it click-to-home */}
       <a href="#home" className="logo" onClick={closeMenu}>
-        {/* Logo Image */}
-        <img src={CMWlogo} alt="Chandu Mineral Water Logo" className="logo-img" />
-        
-        {/* Business Name */}
+        <img src={LogoImage} alt="Chandu Mineral Water Logo" className="logo-img" />
         <h1>Chandu Mineral Water</h1>
       </a>
 
@@ -39,6 +59,7 @@ const Header = () => {
 
       {/* Navigation Links - conditional class for mobile */}
       <nav className={`nav-links ${isOpen ? 'mobile-open' : ''}`}>
+        {/* Links call closeMenu on click (already implemented) */}
         <a href="#home" onClick={closeMenu}>Home</a>
         <a href="#products" onClick={closeMenu}>Products</a>
         <a href="#quality" onClick={closeMenu}>Quality Process</a>

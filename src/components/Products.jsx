@@ -47,7 +47,7 @@ const productData = [
     size: "20 Litres (Cooled)",
     description: "Cold water on demand! We deliver pre-chilled cans, perfect for parties, events, or hot summer days.",
     features: [
-      "Water is Pre-Chilled for Immediate Use", 
+      "Pre-Chilled Water for Immediate Use", 
       "Available for Single or Bulk Order", 
       "Ideal for Events & Gatherings"
     ],
