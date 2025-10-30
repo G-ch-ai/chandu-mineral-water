@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'; // ADDED useEffect
 import './Header.css';
-import LogoImage from '../assets/CMWLogo.png'; 
+import LogoImage from '../assets/CMWlogo.png'; 
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
