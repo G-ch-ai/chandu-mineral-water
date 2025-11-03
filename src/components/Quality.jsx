@@ -8,7 +8,7 @@ const qualitySteps = [
   { icon: '💧', title: 'RO Purification', description: 'Removes dissolved solids, heavy metals, and large microbial impurities for crystal clarity.' },
   { icon: '☀️', title: 'UV Sterilization', description: 'Uses ultraviolet light to eliminate bacteria and viruses without adding any chemicals.' },
   { icon: '🔬', title: 'Multi-Stage Filtration', description: 'Advanced sediment and carbon filters remove fine particles, chlorine, and odors.' },
-  { icon: '📦', title: 'Automated Bottling', description: 'The purified water is filled into sanitized jars in a dust-free, controlled environment.' },
+  { icon: '🚚', title: 'Hygienic Refill & Transport', description: 'Water sealed for transport tankers and sold directly to customers refilling 20L cans at the plant.' },
 ];
 
 const Quality = () => {

@@ -6,7 +6,7 @@
   background-size: cover;
   background-position: center;
   color: white; /* White text on the image overlay */
-  height: 90vh; /* Takes up most of the viewport height */
+  height: 70vh; /* Takes up most of the viewport height */
   display: flex;
   justify-content: center;
   align-items: center;

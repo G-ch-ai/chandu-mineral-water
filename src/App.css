@@ -34,7 +34,7 @@ body {
 /* Utility Class for Content Area */
 .main-content {
   flex-grow: 1; /* Pushes the footer to the bottom */
-  padding-top: 60px; /* Adjust based on your header height */
+  /*padding-top: 60px; /* Adjust based on your header height */
 }
 
 /* Reusable Section Styles - UPDATED FOR OPTION 2 */
