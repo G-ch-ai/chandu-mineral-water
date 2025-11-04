@@ -1,10 +1,29 @@
 // src/components/Footer.jsx
 
 import React from 'react';
-import './Footer.css'; // We will create this CSS file next
+import './Footer.css'; 
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  // Self-Contained Smooth Scroll Logic
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault(); // Stop the default instant jump
+    
+    // Find the target element using the ID
+    const targetElement = document.querySelector(targetId);
+    
+    if (targetElement) {
+      // Offset: A small offset helps clear the section heading visually.
+      const scrollOffset = 20; 
+      
+      // Use the native window.scrollTo method with smooth behavior
+      window.scrollTo({
+        top: targetElement.offsetTop - scrollOffset, 
+        behavior: 'smooth', 
+      });
+    }
+  };
 
   return (
     <footer className="footer-container">
@@ -22,7 +41,7 @@ const Footer = () => {
               +91 85003 42029
             </a>
             {/* Added a clear separator with spaces */}
-             &nbsp;|&nbsp; 
+            &nbsp;|&nbsp; 
             <a href="tel:+919059682029" className="footer-phone-link">
               +91 90596 82029
             </a>
@@ -32,11 +51,12 @@ const Footer = () => {
         <div className="footer-section quick-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#quality">Quality Process</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            {/* UPDATED: Links now use the smooth scroll handler */}
+            <li><a href="#home" onClick={(e) => handleSmoothScroll(e, '#home')}>Home</a></li>
+            <li><a href="#products" onClick={(e) => handleSmoothScroll(e, '#products')}>Products</a></li>
+            <li><a href="#quality" onClick={(e) => handleSmoothScroll(e, '#quality')}>Quality Process</a></li>
+            <li><a href="#gallery" onClick={(e) => handleSmoothScroll(e, '#gallery')}>Gallery</a></li>
+            <li><a href="#contact" onClick={(e) => handleSmoothScroll(e, '#contact')}>Contact</a></li>
           </ul>
         </div>
 
@@ -44,8 +64,8 @@ const Footer = () => {
           <h3>Follow Us</h3>
           {/* Placeholder for social media links */}
           <div className="social-icons">
-            <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i>Facebook</a>
-            <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i>Instagram</a>
+            <a href="" aria-label="Facebook"><i className="fab fa-facebook-f"></i>Facebook</a>
+            <a href="" aria-label="Instagram"><i className="fab fa-instagram"></i>Instagram</a>
           </div>
         </div>
 
