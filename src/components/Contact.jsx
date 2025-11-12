@@ -8,7 +8,7 @@ const Contact = () => {
   const [status, setStatus] = useState(null); 
   const [phoneError, setPhoneError] = useState(false); 
 
-  // UPDATED ENDPOINT: Points to the new Vercel Serverless Function file (api/contact.js)
+  // Points to the new Vercel Serverless Function file (api/contact.js)
   const CONTACT_API_ENDPOINT = '/api/contact'; 
 
   const handleChange = (e) => {
@@ -44,14 +44,12 @@ const Contact = () => {
     setStatus('sending'); 
 
     try {
-      // CRITICAL CHANGE: Sending data as JSON to the Vercel API endpoint
+      // Sending data as JSON to the Vercel API endpoint
       const response = await fetch(CONTACT_API_ENDPOINT, {
         method: 'POST',
         headers: {
-          // Tell the API we are sending JSON data
           'Content-Type': 'application/json', 
         },
-        // Convert the form data object into a JSON string
         body: JSON.stringify(formData), 
       });
 
@@ -88,17 +86,50 @@ const Contact = () => {
       </p>
 
       <div className="contact-grid">
-        {/* 1. Direct Contact Info Block (Your existing block) */}
+        {/* 1. Direct Contact Info Block - RESTORED */}
         <div className="contact-info-block">
           <h3>Direct Order & Support</h3>
-          {/* ... Contact details ... */}
+          
+          <div className="contact-detail">
+            <span className="icon">📞</span>
+            <p>
+              **Primary Call:** <a href="tel:+918500342029" className="phone-link">
+                +91 85003 42029
+              </a>
+            </p>
+          </div>
+          
+          <div className="contact-detail">
+            <span className="icon">📞</span>
+            <p>
+              **Alternate Call:** <a href="tel:+919059682029" className="phone-link">
+                +91 90596 82029
+              </a>
+            </p>
+          </div>
+          
+          <div className="contact-detail">
+            <span className="icon">📍</span>
+            <p>
+              **Our Location:** NehruStreet last, SanthiNagar, Bangarupalem, AP 517416
+            </p>
+          </div>
+          
+          <div className="contact-detail">
+            <span className="icon">📧</span>
+            <p>
+              **Email:** <a href="mailto:chandumineralwater@gmail.com" className="email-link">
+                chandumineralwater@gmail.com
+              </a>
+            </p>
+          </div>
         </div>
+        {/* END 1. Direct Contact Info Block */}
 
         {/* 2. Simple Contact Form */}
         <div className="contact-form-block">
           <h3>Send a Quick Inquiry</h3>
           
-          {/* We remove the 'action' and 'method' attributes here as they are handled by JS fetch() */}
           <form className="order-form" onSubmit={handleSubmit}>
             
             <div className="form-group">
